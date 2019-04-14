@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	_ "gopkg.in/gographics/imagick.v3/imagick"
 )
 
-func main()	{
-	fmt.Println("hello")
+func main() {
+
 }
