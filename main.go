@@ -23,6 +23,16 @@ func ScreenshotSelect() error {
 	return cmd.Run()
 }
 
+func ScreenshotScreen() error {
+	err := checkCommand("import")
+	if err != nil {
+		return err
+	}
+
+	cmd := exec.Command("import", "-window", "root", outputDir)
+	return cmd.Run()
+}
+
 func main() {
 	/*
 		err := checkCommand("import")
@@ -36,7 +46,7 @@ func main() {
 			log.Fatal(err)
 		}
 	*/
-	err := ScreenshotSelect()
+	err := ScreenshotScreen()
 	if err != nil {
 		log.Fatal(err)
 	}
