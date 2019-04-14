@@ -1,17 +1,17 @@
 package main
 
 import (
-	"./imagemagick"
+	"./screenshot"
 	"log"
 )
 
 func main() {
-	err := screenshot.Select()
+	_, err := screenshot.Select()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = screenshot.Screen()
+	_, err = screenshot.Screen()
 	if err != nil {
 		log.Fatal(err)
 	}
