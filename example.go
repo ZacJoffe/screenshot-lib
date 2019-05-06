@@ -1,7 +1,8 @@
 package main
 
 import (
-	"./screenshot"
+	"./imagemagick"
+	maim "./maim"
 	"log"
 )
 
@@ -12,6 +13,16 @@ func main() {
 	}
 
 	_, err = screenshot.Screen()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = maim.Select()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = maim.Screen()
 	if err != nil {
 		log.Fatal(err)
 	}
